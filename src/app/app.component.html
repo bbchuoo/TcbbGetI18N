@@ -1,0 +1,20 @@
+<div class="col-12 mt-3">
+  <div class="form-floating" >
+      <textarea class="form-control" style="height:90px;padding:0px" placeholder="Leave a comment here" id="floatingTextarea" [(ngModel)]="jspContent" ></textarea>
+    </div>
+</div>
+
+<div class="col-12 mt-3 text-center">
+<div class="p-1 d-inline">
+  <button type="button" class="btn btn-outline-primary " (click)="send()">送出</button>
+</div>
+</div>
+
+<div class="container mt-3">
+<div class="alert alert-dark" role="alert">
+  <span *ngFor="let item of jspI18nList" [innerHTML]="item"></span>
+</div>
+<div class="alert alert-dark" role="alert">
+  <span *ngFor="let item of htmlI18nList" [innerHTML]="item"></span>
+</div>
+</div>
