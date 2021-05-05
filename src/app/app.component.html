@@ -30,13 +30,17 @@
     </div>
     </div>
     
-    <div class="container mt-3">
-    <div class="alert alert-secondary" role="alert">
-      <span *ngFor="let item of jspI18nList" [innerHTML]="item"></span>
-    </div>
-    <div class="alert alert-secondary" role="alert">
-      <span *ngFor="let item of htmlI18nList" [innerHTML]="item"></span>
-    </div>
+    <div class="mt-3">
+      <div class="col-6 d-inline-block">
+        <div class="alert alert-secondary" role="alert">
+          <span *ngFor="let item of jspI18nList" [innerHTML]="item"></span>
+        </div>
+      </div>
+      <div class="col-6 d-inline-block">
+        <div class="alert alert-secondary" role="alert">
+          <span *ngFor="let item of htmlI18nList" [innerHTML]="item"></span>
+        </div>
+      </div>
     </div>    
 
   </div>
