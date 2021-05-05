@@ -1,20 +1,44 @@
-<div class="col-12 mt-3">
-  <div class="form-floating" >
-      <textarea class="form-control" style="height:90px;padding:0px" placeholder="Leave a comment here" id="floatingTextarea" [(ngModel)]="jspContent" ></textarea>
+<div class="container-fluid ">
+  <div class="row">
+
+    <div class="col-12 text-center mt-3">
+
+    <div class="alert alert-primary" role="alert">
+      <h4 class="alert-heading">Welcome to TcbbGetI18N，幫忙您找出所需的i18N Key</h4>
     </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">請輸入要找的關鍵字</span>
+      </div>
+      <input placeholder="【範例】jsp上i18N：#{nfns[fundCombn.label.head.riseDown]} ，請在此輸入nfns，會幫您找出此畫面所有nfns相關i18N" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" [(ngModel)]="i18nTitle">
+    </div>
+  </div>
+
+    <div class="col-12 mt-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">請貼上整份jsp</span>
+      </div>
+      <div class="form-floating" >
+          <textarea class="form-control" style="height:100px;padding:0px" placeholder="請將整份jsp貼上吧" id="floatingTextarea" [(ngModel)]="jspContent" ></textarea>
+        </div>
+    </div>
+    
+    <div class="col-12 mt-3 text-center">
+    <div class="p-1 d-inline">
+      <button type="button" class="btn btn-outline-primary " (click)="send()">送出</button>
+    </div>
+    </div>
+    
+    <div class="container mt-3">
+    <div class="alert alert-secondary" role="alert">
+      <span *ngFor="let item of jspI18nList" [innerHTML]="item"></span>
+    </div>
+    <div class="alert alert-secondary" role="alert">
+      <span *ngFor="let item of htmlI18nList" [innerHTML]="item"></span>
+    </div>
+    </div>    
+
+  </div>
 </div>
 
-<div class="col-12 mt-3 text-center">
-<div class="p-1 d-inline">
-  <button type="button" class="btn btn-outline-primary " (click)="send()">送出</button>
-</div>
-</div>
-
-<div class="container mt-3">
-<div class="alert alert-dark" role="alert">
-  <span *ngFor="let item of jspI18nList" [innerHTML]="item"></span>
-</div>
-<div class="alert alert-dark" role="alert">
-  <span *ngFor="let item of htmlI18nList" [innerHTML]="item"></span>
-</div>
-</div>
