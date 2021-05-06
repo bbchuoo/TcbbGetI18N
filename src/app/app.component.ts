@@ -16,6 +16,9 @@ export class AppComponent {
   i18nTitle = '';
 
   send() {
+    this.jspI18nList = [];
+    this.htmlI18nList = [];
+
     console.log('this.jspContent', this.jspContent);
     // const aa = [...this.jspContent];
     var arr = this.jspContent.split("\n");
