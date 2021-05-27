@@ -25,14 +25,16 @@ export class AppComponent {
     const filter = [];
     console.log('arr=', arr)
     arr.forEach((x, i) => {
-
-      if (x.indexOf(('#{'+this.i18nTitle)) > 0) {
-        const ind1 = x.indexOf(('#{'+this.i18nTitle));
-        const bb = x.slice(ind1 + 8)
-        const ind2 = bb.indexOf("'");
-        const cc = bb.substring(0, ind2);
-        this.jspI18nList.push(cc + "<br/>");
-        this.htmlI18nList.push(`{{'${cc}' | translate}}<br/>`);
+      console.log('x.indexOf((this.i18nTitle)=', x.indexOf((this.i18nTitle)));
+      if (x.indexOf(('{'+this.i18nTitle)) > 0) {
+        if (x.indexOf(('#')) > 0) {
+          const ind2 = x.indexOf("'");
+          const ind3 = x.lastIndexOf("'");
+          const cc = x.substring(ind2 + 1, ind3);
+          console.log('cc=', cc);
+          this.jspI18nList.push(cc + "<br/>");
+          this.htmlI18nList.push(`{{'${cc}' | translate}}<br/>`);
+        }
       }
     })
 
